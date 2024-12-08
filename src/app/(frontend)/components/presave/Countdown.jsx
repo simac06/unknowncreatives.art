@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Card, CardBody, CardHeader, Chip } from "@nextui-org/react";
 
 const TimeUnit = ({ value, label }) => (
   <div className=" w-1/4 flex flex-col items-center ">

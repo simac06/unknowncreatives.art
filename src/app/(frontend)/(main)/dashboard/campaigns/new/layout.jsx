@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Tabs, Tab, Card } from "@nextui-org/react";
+import { Tabs, Tab } from "@nextui-org/react";
 
 const tabsInfo = [
   { key: "basic", title: "Basic", content: "basic" },
@@ -12,7 +12,7 @@ const tabsInfo = [
   { key: "promotion", title: "Promotion", content: null },
 ];
 
-export default function Layout({ children, basic, funding }) {
+export default function Layout({ basic, funding }) {
   const getTabProps = (tabInfo) => {
     switch (tabInfo.key) {
       case "basic":

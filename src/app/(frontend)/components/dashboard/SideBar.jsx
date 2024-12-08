@@ -116,7 +116,7 @@ export default function App() {
         }}
       >
         <ModalContent>
-          {(onClose) => (
+          {() => (
             <>
               <ModalHeader className="flex flex-col gap-1"></ModalHeader>
               <ModalBody></ModalBody>
