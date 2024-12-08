@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES2022"
-    ],
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -27,18 +23,23 @@
         "./src/*"
       ],
       "@payload-config": [
-        "./src/payload.config.ts"
-      ]
+        "src/app/payload.config.ts"
+      ],
+      "@components/*": [
+        "src/app/(frontend)/components/*"
+      ],
+      "@lib/*": [
+        "/src/app/lib/*"
+      ],
+      "@utils": [
+        "/src/app/lib/utils"
+      ],
+      "@styles/*": [
+        "/src/app/(frontend)/styles/*"
+      ],
+      "@data/*": ["src/app/data/*"],
     },
-    "target": "ES2022",
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
