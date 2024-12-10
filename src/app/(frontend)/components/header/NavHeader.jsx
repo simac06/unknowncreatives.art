@@ -1,46 +1,6 @@
-// import { FaPersonWalking, FaArrowRightToBracket } from "react-icons/fa6";
-// import {
-//   Navbar,
-//   NavbarBrand,
-//   NavbarContent,
-//   NavbarItem,
-//   NavbarMenuToggle,
-//   NavbarMenu,
-//   NavbarMenuItem,
-//   Link,
-//   Button,
-// } from "@nextui-org/react";
-
-// export default function NavHeader({ isIndexPage }) {
-//   console.log("Is index page:", isIndexPage);
-
-//   return (
-//     <Navbar
-//       maxWidth="2xl"
-//       className="bg-background absolute top-0"
-//       isBlurred="false"
-//     >
-//       <NavbarBrand>
-//         <p className="font-bold text-xl text-inherit">acme</p>
-//       </NavbarBrand>
-
-//       <NavbarContent justify="end">
-//         <NavbarItem className="">
-//           <Link
-//             className="text-white flex justify-center items-center gap-1 text-tiny font-sans font-[600] tracking-wider"
-//             href="#"
-//           >
-//             <span className="">SIGN IN</span>
-//             <FaPersonWalking className=" " />
-//             <FaArrowRightToBracket className=" " />
-//           </Link>
-//         </NavbarItem>
-//       </NavbarContent>
-//     </Navbar>
-//   );
-// }
-
 import React from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Navbar,
   NavbarBrand,
@@ -52,28 +12,47 @@ import {
 } from "@nextui-org/react";
 
 export default function NavHeader({ position }) {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navBarPosition =
     position === "absolute" ? "absolute top-0 bg-transparent" : "";
 
-  const menuItems = [
-    "Explore Campaigns",
-    "Notifications",
-    "Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
+    const menuItems = [
+      { name: "Explore Campaigns", path: "/campaigns" },
+      { name: "Dashboard", path: "/dashboard" },
+      { name: "Link page", path: "/" },
+    ];
+
+  // Animation variants for menu items
+  const menuAnimations = {
+    hidden: (i) => ({
+      opacity: 0,
+      y: -50,
+      transition: {
+        duration: 0.2,
+        delay: i * 0.1 // Stagger effect
+      }
+    }),
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: i * 0.15 // Stagger effect
+      }
+    })
+  };
 
   return (
-    <Navbar
-      onMenuOpenChange={setIsMenuOpen}
+    <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}
       isBlurred={false}
       className={navBarPosition}
     >
       <NavbarContent>
         <NavbarBrand>
-          <p className="font-bold text-xl">acme</p>
+        <Link color="foreground" href="/" className="font-bold text-xl">
+            acme
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -83,25 +62,36 @@ export default function NavHeader({ position }) {
           className="sm:hidden"
         />
       </NavbarContent>
-      <NavbarMenu>
+      <NavbarMenu className="">
+        <div className="h-2/3 flex flex-col justify-evenly">
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
+          <motion.div
+            key={`${item}-${index}`}
+            className=""
+            custom={index}
+            initial="hidden"
+            animate={isMenuOpen ? "visible" : "hidden"}
+            variants={menuAnimations}
+          >
+            <NavbarMenuItem>
+              <Link
+                href={item.path}
+                color={
+                  index === 2
+                    ? "primary"
+                    : index === menuItems.length - 1
+                      ? "danger"
+                      : "foreground"
+                }
+                className="w-full text-3xl"
+                size="lg"
+              >
+                {item.name}
+              </Link>
+            </NavbarMenuItem>
+          </motion.div>
         ))}
+        </div>
       </NavbarMenu>
     </Navbar>
   );
