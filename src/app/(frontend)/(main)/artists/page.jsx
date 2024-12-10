@@ -3,15 +3,7 @@
 import ArtistData from "../../../data/artistData";
 import PageTitle from "../../components/header/PageTitle";
 
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Chip,
-  Button,
-  Image,
-  CardFooter,
-} from "@nextui-org/react";
+import { Card, Chip, Image, CardFooter } from "@nextui-org/react";
 
 export default function Artists() {
   const ArtistCard = ({ artist }) => {

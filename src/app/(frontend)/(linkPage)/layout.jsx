@@ -1,14 +1,11 @@
-'use client'
+"use client";
 
-import '@styles/global.css'
-import Head from 'next/head'
-import { NextUIProvider } from '@nextui-org/react'
-import NavHeader from '../components/header/NavHeader'
-import { usePathname } from 'next/navigation'
+import "@styles/global.css";
+import Head from "next/head";
+import { NextUIProvider } from "@nextui-org/react";
+import NavHeader from "../components/header/NavHeader";
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname()
-  const isIndexPage = pathname === '/'
   return (
     <html lang="en" className="dark">
       <Head>
@@ -26,5 +23,5 @@ export default function RootLayout({ children }) {
         </NextUIProvider>
       </body>
     </html>
-  )
+  );
 }

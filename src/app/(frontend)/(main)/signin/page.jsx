@@ -1,14 +1,10 @@
 "use client";
 
 import React from "react";
-import { Button, Input, Checkbox, Link, Divider } from "@nextui-org/react";
-import { FaEye, FaEyeSlash, FaGoogle, FaGithub } from "react-icons/fa";
+import { Button, Input, Link, Divider } from "@nextui-org/react";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 export default function SignUpPage() {
-  const [isVisible, setIsVisible] = React.useState(false);
-
-  const toggleVisibility = () => setIsVisible(!isVisible);
-
   return (
     <div className="flex flex-col min-h-page h-page w-full px-6  items-center justify-center">
       <div className="flex flex-col gap-4 justify-center h-1/3 items-center text-center">
@@ -59,8 +55,8 @@ export default function SignUpPage() {
           </Link>
         </p>
         <p className="text-small text-center text-content4">
-          By creating an account you agree to ACME's privacy policy, T&Cs and to
-          receive offers, news and updates.
+          By creating an account you agree to ACME&apos;s privacy policy, T&Cs
+          and to receive offers, news and updates.
         </p>
       </div>
     </div>

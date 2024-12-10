@@ -5,10 +5,7 @@ import { useState } from "react";
 import {
   Card,
   CardBody,
-  CardFooter,
   CardHeader,
-  CardImage,
-  CardTitle,
   Spacer,
   Input,
   Select,
@@ -29,7 +26,7 @@ export default function Basic() {
     <div className="flex flex-col">
       <div className="prose-invert prose prose-sm">
         <h2 className="">Basic Information</h2>
-        <p className="">Let's start with some basic information</p>
+        <p className="">Let&apos;s start with some basic information</p>
       </div>
       <Spacer y={4} />
       <Card className="w-full px-2 py-2 max-w-[500px]">

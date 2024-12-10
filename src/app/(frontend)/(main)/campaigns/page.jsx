@@ -2,18 +2,16 @@
 import { getPayload } from "payload";
 import config from "@payload-config";
 import PageTitle from "@components/header/PageTitle";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Image,
-  User,
-  Progress,
-} from "@nextui-org/react";
+import { Card, CardHeader, CardBody } from "@nextui-org/card";
+import { Image } from "@nextui-org/image";
+import { Progress } from "@nextui-org/progress";
+import { User } from "@nextui-org/user";
+
 import { getImageUrl } from "@utils";
 
 const CampaignCard = ({ campaign }) => {
   const { hero_image, title, amtFunded, goal } = campaign;
+  console.log(campaign);
   return (
     <Card radius="xl" isPressable className="">
       <CardHeader radius="" className="w-full p-0 overflow-hidden">
@@ -55,15 +53,11 @@ const CampaignCard = ({ campaign }) => {
   );
 };
 
-// Make async to fetch data
 export default async function Campaigns() {
-  // Get payload instance
   const payload = await getPayload({ config });
-
-  // Fetch campaigns using Local API
   const { docs: campaigns } = await payload.find({
     collection: "campaign",
-    depth: 1, // To populate hero_image
+    depth: 1,
   });
 
   return (

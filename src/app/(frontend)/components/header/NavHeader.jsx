@@ -45,12 +45,10 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
   Link,
-  Button,
 } from "@nextui-org/react";
 
 export default function NavHeader({ position }) {
@@ -93,8 +91,8 @@ export default function NavHeader({ position }) {
                 index === 2
                   ? "primary"
                   : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
+                    ? "danger"
+                    : "foreground"
               }
               className="w-full"
               href="#"
