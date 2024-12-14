@@ -29,7 +29,7 @@ export default function CampaignCard({ campaign }) {
       </CardHeader>
       <CardBody className="pb-8 flex flex-col gap-4 pt-6 px-6">
         <div className="flex flex-col gap-[0.33rem] items-start">
-          <p className="text-white text-xl">{title}</p>
+          <p className=" text-xl">{title}</p>
           <User
             classNames={{
               name: "text-medium",

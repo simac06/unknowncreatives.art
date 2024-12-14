@@ -22,7 +22,7 @@ export default function Hero() {
             New onboarding experience
           </Button>
           <div className="text-center text-[clamp(1px,10vw,26px)] font-bold leading-[1.2] tracking-tighter sm:text-[64px]">
-            <div className=" text-white">
+            <div className=" ">
               Support Your Favorite Artists,
               <br />
               Unlock Exclusive Rewards

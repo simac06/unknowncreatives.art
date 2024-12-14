@@ -36,13 +36,15 @@ export default async function CampaignPage({ params }) {
           radius="none"
           className="aspect-square w-full overflow-hidden relative"
         >
-          <CardBody className="absolute bottom-0 z-20 px-6">
+          <CardBody className="absolute bottom-0 z-20 px-4">
             <div className="flex flex-col gap-2">
-              <h1 className="text-2xl font-bold">{campaign.title}</h1>
-              <p>
-                Short desciption of what this campaign is for, and where the
-                money will go
-              </p>
+              <div className="flex flex-col drop-shadow-xl">
+                <h1 className="text-3xl font-semibold ">{campaign.title}</h1>
+                <p className="">
+                  Short desciption of what this campaign is for, and where the
+                  money will go
+                </p>
+              </div>
               <div className="">
                 <User
                   classNames={{
@@ -76,7 +78,7 @@ export default async function CampaignPage({ params }) {
                 radius="sm"
                 classNames={{
                   base: "max-w-md",
-                  track: "drop-shadow-md",
+                  track: "drop-shadow-md bg-default",
                   label: "w-full",
                 }}
                 value={percentFunded}
@@ -104,9 +106,9 @@ export default async function CampaignPage({ params }) {
                     <FaPeopleGroup></FaPeopleGroup>
                   </span>
                   <p>
-                    <span className="font-bold">6000</span>
+                    <span className="font-medium">6000</span>
                     &nbsp;
-                    <span className="text-default-500">Backers</span>
+                    <span className="text-default-500 font-light">Backers</span>
                   </p>
                 </div>
                 <Divider orientation="vertical" />

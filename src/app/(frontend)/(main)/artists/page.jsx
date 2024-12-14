@@ -20,10 +20,10 @@ export default function Artists() {
         </div>
         <CardFooter className="absolute bottom-0 z-10 ">
           <div className="flex gap-1 flex-col items-start">
-            <p className="text-white font-bold text-large">{artist.name}</p>
+            <p className=" font-bold text-large">{artist.name}</p>
             <div className="flex gap-1">
               {artist.genres.map((genre) => (
-                <Chip size="sm" key={genre} className="text-white">
+                <Chip size="sm" key={genre} className="">
                   {genre}
                 </Chip>
               ))}

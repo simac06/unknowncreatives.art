@@ -11,7 +11,7 @@ export default function RewardsCard() {
       <Card className="relative overflow-visible">
         <div
           size="md"
-          className="absolute text-2xl font-bold -top-3 -right-3 z-20 bg-secondary-500 rounded-full aspect-square p-3"
+          className="absolute text-2xl font-bold -top-3 -right-3 z-20 bg-secondary rounded-full aspect-square p-3"
         >
           $5
         </div>
@@ -32,7 +32,7 @@ export default function RewardsCard() {
                 1/500 Left
               </Chip>
             </div>
-            <p className="text-small text-default-500">
+            <p className="text-small text-copy ">
               A unique Polaroid taken just for you by Damn Drone. Whether
               it&apos;s a candid behind-the-scenes shot, or a glimpse into their
               creative process, no two are alike—making it a special treasure.
@@ -41,11 +41,11 @@ export default function RewardsCard() {
           <div className="grid w-full grid-cols-2 grid-rows-2 gap-2">
             <div className="flex flex-col gap-1">
               <span className="text-tiny text-default-500">SHIPS</span>
-              <span className="text-small text-white">Nov 3, 2025</span>
+              <span className="text-small">Nov 3, 2025</span>
             </div>
             <div className="flex flex-col gap-1">
               <span className="text-tiny text-default-500">LIMITED</span>
-              <span className="text-small text-white">1/500 Left</span>
+              <span className="text-small">1/500 Left</span>
             </div>
             <div className="flex flex-col gap-1">
               <span className="text-tiny text-default-500">BACKERS</span>
