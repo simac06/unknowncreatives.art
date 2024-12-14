@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import { Card, CardBody } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 import { Progress } from "@nextui-org/progress";
-
+import StickyPledge from "@components/campaigns/individual/StickyPledge";
 import { Divider } from "@nextui-org/divider";
 import CampaignTabs from "@components/campaigns/individual/CampaignTabs";
+import CampaignContent from "@components/campaigns/individual/CampaignContent";
 import { User } from "@nextui-org/user";
 import { getImageUrl } from "@utils";
 import { FaPeopleGroup, FaCalendarDays } from "react-icons/fa6";
@@ -29,7 +30,8 @@ export default async function CampaignPage({ params }) {
     const percentFunded = (campaign.amtFunded / campaign.goal) * 100;
 
     return (
-      <section className="relative flex flex-col gap-4 mb-16">
+      <section className="relative flex flex-col mb-16">
+        {/* image and title card */}
         <Card
           radius="none"
           className="aspect-square w-full overflow-hidden relative"
@@ -37,6 +39,10 @@ export default async function CampaignPage({ params }) {
           <CardBody className="absolute bottom-0 z-20 px-6">
             <div className="flex flex-col gap-2">
               <h1 className="text-2xl font-bold">{campaign.title}</h1>
+              <p>
+                Short desciption of what this campaign is for, and where the
+                money will go
+              </p>
               <div className="">
                 <User
                   classNames={{
@@ -59,8 +65,9 @@ export default async function CampaignPage({ params }) {
           />
           <div className="absolute z-10 w-full h-full object-cover bg-gradient-to-t from-background to-transparent via-transparent"></div>
         </Card>
+        {/* end image and title card */}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4">
           {/* progress card */}
           <Card className="px-4 py-2">
             <CardBody className="flex flex-col gap-4">
@@ -119,7 +126,7 @@ export default async function CampaignPage({ params }) {
 
           {/* end progress card */}
           {/* tabs */}
-          <CampaignTabs campaign={campaign}></CampaignTabs>
+          <CampaignContent campaign={campaign} />
           {/* end tabs */}
         </div>
       </section>
