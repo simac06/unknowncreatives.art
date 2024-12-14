@@ -4,9 +4,9 @@ import { notFound } from "next/navigation";
 import { Card, CardBody } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 import { Progress } from "@nextui-org/progress";
-import StickyPledge from "@components/campaigns/individual/StickyPledge";
+
 import { Divider } from "@nextui-org/divider";
-import CampaignTabs from "@components/campaigns/individual/CampaignTabs";
+
 import CampaignContent from "@components/campaigns/individual/CampaignContent";
 import { User } from "@nextui-org/user";
 import { getImageUrl } from "@utils";

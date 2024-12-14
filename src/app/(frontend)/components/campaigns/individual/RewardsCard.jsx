@@ -1,17 +1,11 @@
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import { Avatar, AvatarGroup, AvatarIcon } from "@nextui-org/avatar";
-import { cn } from "@nextui-org/react";
-import { FaStar } from "react-icons/fa";
+import { Avatar, AvatarGroup } from "@nextui-org/avatar";
+
 import { Chip } from "@nextui-org/chip";
 
 export default function RewardsCard() {
-  const name = "Unique Polaroid";
-  const description = "A unique polaroid photo of the artist's studio";
-  const imageSrc = "/rewards-images/polaroid.png";
-  const price = 5;
-
   return (
     <>
       <Card className="relative overflow-visible">
