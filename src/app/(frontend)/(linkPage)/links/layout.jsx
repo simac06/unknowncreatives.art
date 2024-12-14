@@ -3,7 +3,7 @@
 import "@styles/global.css";
 import Head from "next/head";
 import { NextUIProvider } from "@nextui-org/react";
-import NavHeader from "../components/header/NavHeader";
+import NavHeader from "../../components/header/NavHeader";
 
 export default function RootLayout({ children }) {
   return (

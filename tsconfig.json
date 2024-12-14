@@ -29,6 +29,9 @@
       "@components/*": [
         "src/app/(frontend)/components/*"
       ],
+      "@public/*": [
+        "public/*"
+      ],
       "@lib/*": [
         "/src/app/lib/*"
       ],

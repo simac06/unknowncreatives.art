@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import '@styles/global.css'
-import Head from 'next/head'
-import { NextUIProvider } from '@nextui-org/react'
-import NavHeader from '../components/header/NavHeader'
+import "@styles/global.css";
+import Head from "next/head";
+import { NextUIProvider } from "@nextui-org/react";
+import NavHeader from "../components/header/NavHeader";
 
 export default function RootLayout({ children }) {
   return (
@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
       <body className="dark bg-background">
         <NextUIProvider>
           <NavHeader position="auto" />
-          <main className="bg-background min-h-page px-6">{children}</main>
+          <main className="bg-background min-h-page">{children}</main>
         </NextUIProvider>
       </body>
     </html>
-  )
+  );
 }
