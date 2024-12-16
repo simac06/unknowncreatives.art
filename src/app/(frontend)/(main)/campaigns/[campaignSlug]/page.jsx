@@ -34,7 +34,7 @@ export default async function CampaignPage({ params }) {
         {/* image and title card */}
         <Card
           radius="none"
-          className="aspect-square w-full overflow-hidden relative"
+          className="aspect-square shadow-none w-full overflow-hidden relative"
         >
           <CardBody className="absolute bottom-0 z-20 px-4">
             <div className="flex flex-col gap-2">
@@ -62,10 +62,10 @@ export default async function CampaignPage({ params }) {
             radius="none"
             removeWrapper
             alt={campaign.title}
-            className="z-10 w-full h-full"
+            className="z-10 w-full object-cover h-full"
             src={getImageUrl(campaign.hero_image?.url)}
           />
-          <div className="absolute z-10 w-full h-full object-cover bg-gradient-to-t from-background to-transparent via-transparent"></div>
+          <div className="absolute z-10 w-full h-full object-cover bg-gradient-to-t from-background to-transparent  via-transparent"></div>
         </Card>
         {/* end image and title card */}
 

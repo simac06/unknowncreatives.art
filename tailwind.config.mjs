@@ -11,7 +11,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"gamay-variable"', 'sans-serif'],
+        sans: ['"campaign"', 'sans-serif'],
       },
       colors: {
         background: "var(--background)",
@@ -36,23 +36,25 @@ export default {
           extend: "dark", // extends the default dark theme
           colors: {
             primary: {
-              DEFAULT: "#51e5ff",
-              foreground: "#004551",
+              DEFAULT: "#61FBB6",
+              foreground: "#025b33",
+              dark: "#2ffa9f",
             },
             secondary: {
-              DEFAULT: "#b584ff",
-              foreground: "#ffffff",
+              DEFAULT: "#fc93c2",
+              foreground: "#5b022a",
             },
             copy: {
               DEFAULT: "#9faaac", 
 
             },
-            background: "#181b1b",
+            border: "#295642",
+            background: "#171c1a",
             foreground: "#fbfbfb",
-            content1: "#232829",
+            content1: "#222a27",
             content2: "#2C3334",
             default: {
-              DEFAULT: "#495355",
+              DEFAULT: "#cbe6da",
               foreground: "#fbfbfb",
             }
           },
