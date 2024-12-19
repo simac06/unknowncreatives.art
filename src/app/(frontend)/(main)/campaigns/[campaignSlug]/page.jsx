@@ -39,7 +39,7 @@ export default async function CampaignPage({ params }) {
           <CardBody className="absolute bottom-0 z-20 px-4">
             <div className="flex flex-col gap-2">
               <div className="flex flex-col drop-shadow-xl">
-                <h1 className="text-3xl font-semibold ">{campaign.title}</h1>
+                <h1 className="text-3xl font-semibold">{campaign.title}</h1>
                 <p className="">
                   Short desciption of what this campaign is for, and where the
                   money will go

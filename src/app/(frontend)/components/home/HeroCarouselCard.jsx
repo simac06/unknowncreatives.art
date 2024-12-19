@@ -1,21 +1,12 @@
 "use client";
 
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Image,
-  Chip,
-  Progress,
-} from "@nextui-org/react";
+import { Card, CardBody, Image, Chip, Progress } from "@nextui-org/react";
 
 export default function HeroCarouselCard() {
   const percentFunded = 97;
   return (
-    <Card className="w-full ">
-      <div className="aspect-[3/4] h-full relative overflow-hidden">
+    <Card className="w-full h-full">
+      <div className=" h-full relative overflow-hidden">
         <Image
           removeWrapper
           src="/hero-card-images/random-dude.jpg"

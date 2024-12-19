@@ -7,7 +7,7 @@ import NavHeader from "../components/header/NavHeader";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark overflow-x-clip">
       <Head>
         <link rel="stylesheet" href="https://use.typekit.net/waj0nge.css" />
       </Head>

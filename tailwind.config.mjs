@@ -11,7 +11,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"campaign"', 'sans-serif'],
+        sans: ['"obviously-variable"', 'sans-serif'],
       },
       colors: {
         background: "var(--background)",

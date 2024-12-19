@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <div className=" gap-16 flex flex-col items-center">
         <Hero />
-        <section className="flex flex-col gap-6 lg:w-3/4">
+        <section className="flex flex-col gap-6 px-6 lg:w-3/4">
           <h2 className="text-2xl text-center font-bold">How it works</h2>
           <div className="grid grid-cols-2  gap-3 sm:gap-6">
             <Feature

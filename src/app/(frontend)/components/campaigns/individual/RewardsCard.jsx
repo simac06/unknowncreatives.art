@@ -1,9 +1,6 @@
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import { Avatar, AvatarGroup } from "@nextui-org/avatar";
-
-import { Chip } from "@nextui-org/chip";
 
 export default function RewardsCard() {
   return (
@@ -11,7 +8,7 @@ export default function RewardsCard() {
       <Card className="relative overflow-visible">
         <div
           size="md"
-          className="absolute text-3xl font-medium -top-3 -right-3 z-20 bg-primary text-primary-foreground rounded-full aspect-square p-3"
+          className="absolute text-3xl leading-none flex pt-4 items-center justify-center font-medium -top-3 -right-3 z-20 bg-primary text-primary-foreground rounded-full aspect-square p-3"
         >
           $5
         </div>
@@ -28,32 +25,27 @@ export default function RewardsCard() {
             <span className="text-[0.7rem] font-normal"> LEFT</span>
           </div>
         </CardHeader>
-        <CardBody className="px-8 flex flex-col gap-4">
+        <CardBody className="px-8 flex flex-col gap-4 pt-5">
           <div className="flex flex-col gap-2">
-            <div className="flex justify-between items-center w-full">
-              <h2 className="text-xl ">
-                One of a kind Polaroid That is just sooooooo goooddd and unique
-              </h2>
-              <Chip color="default" size="md" className="text-medium font-bold">
-                1/500 Left
-              </Chip>
-            </div>
+            <h2 className="text-xl font-semibold ">One of a kind Polaroid</h2>
+
             <p className="text-small text-copy ">
               A unique Polaroid taken just for you by Damn Drone. Whether
               it&apos;s a candid behind-the-scenes shot, or a glimpse into their
               creative process, no two are alike—making it a special treasure.
             </p>
           </div>
-          <div className="grid w-full grid-cols-2 grid-rows-2 gap-2">
+          <div className="grid w-full grid-cols-2  gap-2">
             <div className="flex flex-col gap-1">
               <span className="text-tiny text-default-500">SHIPS</span>
               <span className="text-small">Nov 3, 2025</span>
             </div>
             <div className="flex flex-col gap-1">
-              <span className="text-tiny text-default-500">LIMITED</span>
-              <span className="text-small">1/500 Left</span>
+              <span className="text-tiny text-default-500">BACKERS</span>
+              <span className="text-small">499</span>
             </div>
-            <div className="flex flex-col gap-1">
+
+            {/* <div className="flex flex-col gap-1">
               <span className="text-tiny text-default-500">BACKERS</span>
               <AvatarGroup
                 className="[&>span]:w-6 [&>span]:h-6 text-tiny"
@@ -72,11 +64,17 @@ export default function RewardsCard() {
                 <Avatar name="Jim" />
                 <Avatar name="Jim" />
               </AvatarGroup>
-            </div>
+            </div> */}
           </div>
         </CardBody>
         <CardFooter>
-          <Button color="primary" radius="sm" fullWidth size="lg">
+          <Button
+            className="font-semibold text-xl"
+            color="primary"
+            radius="sm"
+            fullWidth
+            size="lg"
+          >
             Pledge $5
           </Button>
         </CardFooter>
