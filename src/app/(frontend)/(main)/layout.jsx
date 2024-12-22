@@ -7,19 +7,16 @@ import NavHeader from "../components/header/NavHeader";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark overflow-x-clip">
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="stylesheet" href="https://use.typekit.net/waj0nge.css" />
       </Head>
-      <body className="dark bg-background">
+      <body className="dark bg-background font-sans">
         <NextUIProvider>
           <NavHeader position="auto" />
-          <main className="bg-background min-h-page">{children}</main>
+          <main className="bg-background min-h-page font-light">
+            {children}
+          </main>
         </NextUIProvider>
       </body>
     </html>

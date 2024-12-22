@@ -1,60 +1,44 @@
 "use client";
 
 import { Button } from "@nextui-org/react";
-import { FaArrowRight } from "react-icons/fa";
+
+import HeroCarousel from "./HeroCarousel";
 
 export default function Hero() {
   return (
     <>
-      <div className="flex flex-col items-center h-[50vh]">
-        <section className=" h-full flex flex-col items-center justify-center gap-[18px] sm:gap-6">
-          <Button
-            className="h-9 overflow-hidden border-1 border-default-100 bg-default-50 px-[18px] py-2 text-small font-normal leading-5 text-default-500"
-            endContent={
-              <FaArrowRight
-                className="flex-none outline-none [&>path]:stroke-[2]"
-                width={20}
-              />
-            }
-            radius="full"
-            variant="bordered"
-          >
-            New onboarding experience
-          </Button>
-          <div className="text-center text-[clamp(1px,10vw,26px)] font-bold leading-[1.2] tracking-tighter sm:text-[64px]">
-            <div className=" text-white">
-              Support Your Favorite Artists,
-              <br />
-              Unlock Exclusive Rewards
+      <div className="flex flex-col items-center min-h-page">
+        <section className=" h-page flex flex-col items-center sm:gap-6">
+          {/* main herosection */}
+          <div className="flex h-2/3 justify-center relative flex-col  pt-6 pb-32 px-4  rounded-b-3xl gap-6">
+            <div className="flex flex-col gap-2 text-center">
+              <h2 className="text-[clamp(1px,10vw,28px)] font-semibold leading-[1.2] tracking-tight sm:text-[64px] ">
+                Get
+                <span className="text-primary"> Rewarded</span>
+                <br />
+                for <span className="text-secondary">Supporting</span> Your
+                Favourite
+                <span className="text-primary"> Artists</span>
+              </h2>
+              <p className="font-medium text-small  text-default sm:w-[466px] sm:text-[18px]">
+                Play a part in your favourite musician&apos;s success, and be
+                rewarded with exclusive keepsakes and experiences
+              </p>
             </div>
+            <div className="flex items-center flex-col  w-full justify-center gap-6 sm:flex-row">
+              <Button
+                color=""
+                size=""
+                className="font-medium tracking-tight  text-medium  bg-secondary  text-secondary-foreground"
+                radius="sm"
+              >
+                Explore Campaigns
+              </Button>
+            </div>
+            {/* card */}
           </div>
-          <p className="text-center font-normal leading-7 text-default-500 sm:w-[466px] sm:text-[18px]">
-            Connect with the artists you love and play a part in their success.
-            Your support fuels their creativity, and you&apos;ll be rewarded
-            with exclusive items and experiences
-          </p>
-          <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
-            <Button
-              className="h-10 w-[163px] bg-default-foreground px-[16px] py-[10px] text-small font-medium leading-5 text-background"
-              radius="full"
-            >
-              Get Started
-            </Button>
-            <Button
-              className="h-10 w-[163px] border-1 border-default-100 px-[16px] py-[10px] text-small font-medium leading-5"
-              endContent={
-                <span className="pointer-events-none flex h-[22px] w-[22px] items-center justify-center rounded-full bg-default-100">
-                  <FaArrowRight
-                    className="text-default-500 [&>path]:stroke-[1.5]"
-                    width={16}
-                  />
-                </span>
-              }
-              radius="full"
-              variant="bordered"
-            >
-              See our plans
-            </Button>
+          <div className="h-1/2 overflow-x-hidden -translate-x-[4px]  w-full items-center z-20 bottom-0  left-1 justify-center absolute  flex ">
+            <HeroCarousel />
           </div>
         </section>
       </div>

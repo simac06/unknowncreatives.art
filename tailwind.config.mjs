@@ -1,6 +1,7 @@
+const { nextui } = require("@nextui-org/react");
+
 /** @type {import('tailwindcss').Config} */
-import { nextui } from "@nextui-org/react";
-module.exports = {
+export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ['"obviously-variable"', 'sans-serif'],
       },
       colors: {
         background: "var(--background)",
@@ -28,5 +29,38 @@ module.exports = {
     },
   },
   darkMode: "class",
-  plugins: [nextui(), require("@tailwindcss/typography")],
+  plugins: [
+    nextui({
+      themes: {
+        dark: {
+          extend: "dark", // extends the default dark theme
+          colors: {
+            primary: {
+              DEFAULT: "#61FBB6",
+              foreground: "#025b33",
+              dark: "#2ffa9f",
+            },
+            secondary: {
+              DEFAULT: "#fc93c2",
+              foreground: "#5b022a",
+            },
+            copy: {
+              DEFAULT: "#9faaac", 
+
+            },
+            border: "#295642",
+            background: "#171c1a",
+            foreground: "#fbfbfb",
+            content1: "#222a27",
+            content2: "#2C3334",
+            default: {
+              DEFAULT: "#cbe6da",
+              foreground: "#fbfbfb",
+            }
+          },
+        },
+      },
+    }),
+    require("@tailwindcss/typography")
+  ],
 };
