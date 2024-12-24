@@ -1,29 +1,39 @@
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
+import RewardImage from "./RewardImage";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+} from "@nextui-org/modal";
+import { Form } from "@nextui-org/form";
+import { Tabs, Tab } from "@nextui-org/tabs";
+import { Input } from "@nextui-org/input";
+import {
+  Autocomplete,
+  AutocompleteSection,
+  AutocompleteItem,
+} from "@nextui-org/autocomplete";
+import { useDisclosure } from "@nextui-org/react";
 
 export default function RewardsCard() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  const countries = [
+    { key: "usa", label: "United States" },
+    { key: "can", label: "Canada" },
+    { key: "uk", label: "United Kingdom" },
+    { key: "aus", label: "Australia" },
+    { key: "fin", label: "Finland" },
+  ];
   return (
     <>
       <Card className="relative overflow-visible">
-        <div
-          size="md"
-          className="absolute text-3xl leading-none flex pt-4 items-center justify-center font-medium -top-3 -right-3 z-20 bg-primary text-primary-foreground rounded-full aspect-square p-3"
-        >
-          $5
-        </div>
-        <CardHeader className=" flex items-center justify-center relative w-full h-full p-4 ">
-          <div className=" flex aspect-square h-full w-full flex-col items-center justify-center rounded-medium bg-content2">
-            <Image
-              removeWrapper
-              src="/rewards-images/polaroid.png"
-              className="active:scale-105 shadow-xl shadow-background object-contain object-center w-2/3 hover:scale-105 focus:scale-105 transition-transform duration-300"
-            ></Image>
-          </div>
-          <div className=" absolute leading-none bottom-0 text-secondary-foreground font-medium rounded-xl z-20 text-large translate-y-1 bg-secondary px-6 pb-1 pt-2 flex flex-col items-center justify-center">
-            <span>1/500</span>
-            <span className="text-[0.7rem] font-normal"> LEFT</span>
-          </div>
+        <CardHeader className=" flex items-center  justify-center relative w-full h-full p-4 ">
+          <RewardImage></RewardImage>
         </CardHeader>
         <CardBody className="px-8 flex flex-col gap-4 pt-5">
           <div className="flex flex-col gap-2">
@@ -44,31 +54,11 @@ export default function RewardsCard() {
               <span className="text-tiny text-default-500">BACKERS</span>
               <span className="text-small">499</span>
             </div>
-
-            {/* <div className="flex flex-col gap-1">
-              <span className="text-tiny text-default-500">BACKERS</span>
-              <AvatarGroup
-                className="[&>span]:w-6 [&>span]:h-6 text-tiny"
-                isBordered
-                max={3}
-                renderCount={(count) => (
-                  <p className="text-small text-foreground font-medium ms-2">
-                    {count}
-                  </p>
-                )}
-                total={499}
-              >
-                <Avatar name="Jim" />
-                <Avatar name="Jim" />
-                <Avatar name="Jim" />
-                <Avatar name="Jim" />
-                <Avatar name="Jim" />
-              </AvatarGroup>
-            </div> */}
           </div>
         </CardBody>
         <CardFooter>
           <Button
+            onPress={onOpen}
             className="font-semibold text-xl"
             color="primary"
             radius="sm"
@@ -79,6 +69,45 @@ export default function RewardsCard() {
           </Button>
         </CardFooter>
       </Card>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent className="p-4 bg-background">
+          {(onClose) => (
+            <>
+              <ModalHeader className=" ">
+                <div className=" grid grid-cols-3 bg-content1 p-3 w-full h-full rounded-2xl">
+                  <div className=" flex aspect-square h-full w-full flex-col items-center p-1 justify-center rounded-medium bg-content2">
+                    <Image
+                      removeWrapper
+                      src="/rewards-images/polaroid.png"
+                      className="active:scale-105 shadow-sm rounded-small shadow-background object-contain object-center w-3/4 hover:scale-105 focus:scale-105 transition-transform duration-300"
+                    ></Image>
+                  </div>
+                </div>
+              </ModalHeader>
+              <ModalBody>
+                <Form action="">
+                  <Input
+                    className="w-full"
+                    label="Full Name"
+                    type="name"
+                    placeholder="john Doe"
+                  />
+                  <Autocomplete className="w-full" label="Choose your country">
+                    {countries.map((country) => (
+                      <AutocompleteItem className=" pr-0" key={country.key}>
+                        <div className=" flex w-full justify-between">
+                          <span>{country.label}</span>
+                          <span>+$17</span>
+                        </div>
+                      </AutocompleteItem>
+                    ))}
+                  </Autocomplete>
+                </Form>
+              </ModalBody>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </>
   );
 }
