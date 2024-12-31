@@ -1,34 +1,21 @@
 import { Button } from "@nextui-org/button";
-import { Image } from "@nextui-org/image";
 import RewardImage from "./RewardImage";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-} from "@nextui-org/modal";
-import { Form } from "@nextui-org/form";
-import { Tabs, Tab } from "@nextui-org/tabs";
-import { Input } from "@nextui-org/input";
-import {
-  Autocomplete,
-  AutocompleteSection,
-  AutocompleteItem,
-} from "@nextui-org/autocomplete";
+
 import { useDisclosure } from "@nextui-org/react";
+
+import RewardsFormModal from "./CheckoutForm/RewardsFormModal";
 
 export default function RewardsCard() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const countries = [
-    { key: "usa", label: "United States" },
-    { key: "can", label: "Canada" },
+    { key: "us", label: "United States" },
+    { key: "ca", label: "Canada" },
     { key: "uk", label: "United Kingdom" },
-    { key: "aus", label: "Australia" },
-    { key: "fin", label: "Finland" },
+    { key: "au", label: "Australia" },
   ];
+
   return (
     <>
       <Card className="relative overflow-visible">
@@ -69,45 +56,11 @@ export default function RewardsCard() {
           </Button>
         </CardFooter>
       </Card>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent className="p-4 bg-background">
-          {(onClose) => (
-            <>
-              <ModalHeader className=" ">
-                <div className=" grid grid-cols-3 bg-content1 p-3 w-full h-full rounded-2xl">
-                  <div className=" flex aspect-square h-full w-full flex-col items-center p-1 justify-center rounded-medium bg-content2">
-                    <Image
-                      removeWrapper
-                      src="/rewards-images/polaroid.png"
-                      className="active:scale-105 shadow-sm rounded-small shadow-background object-contain object-center w-3/4 hover:scale-105 focus:scale-105 transition-transform duration-300"
-                    ></Image>
-                  </div>
-                </div>
-              </ModalHeader>
-              <ModalBody>
-                <Form action="">
-                  <Input
-                    className="w-full"
-                    label="Full Name"
-                    type="name"
-                    placeholder="john Doe"
-                  />
-                  <Autocomplete className="w-full" label="Choose your country">
-                    {countries.map((country) => (
-                      <AutocompleteItem className=" pr-0" key={country.key}>
-                        <div className=" flex w-full justify-between">
-                          <span>{country.label}</span>
-                          <span>+$17</span>
-                        </div>
-                      </AutocompleteItem>
-                    ))}
-                  </Autocomplete>
-                </Form>
-              </ModalBody>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
+      <RewardsFormModal
+        countries={countries}
+        onOpenChange={onOpenChange}
+        isOpen={isOpen}
+      />
     </>
   );
 }

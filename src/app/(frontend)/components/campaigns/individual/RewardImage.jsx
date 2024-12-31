@@ -5,9 +5,10 @@ export default function RewardImage() {
     <>
       <div className="relative grid">
         <div className="absolute  top left h-16 w-16 bg-content1  pr-2  border-content1 shadow-none   z-20    rounded-br-[33%]     ">
-          <span className="leading-none font-bold  text-3xl bg-primary  text-primary-foreground rounded-lg rounded-br-[28%] aspect-square  flex flex-col items-center justify-center ">
-            $5
-          </span>
+          <div className="leading-none bg-primary  text-primary-foreground rounded-lg rounded-br-[28%] aspect-square  flex items-center justify-center ">
+            <span className="text-xl font-medium">$</span>
+            <span className="text-3xl font-semibold">5</span>
+          </div>
         </div>
         <div className=" flex aspect-square h-full w-full flex-col items-center justify-center rounded-medium bg-content2">
           <Image

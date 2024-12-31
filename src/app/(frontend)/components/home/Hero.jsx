@@ -12,13 +12,16 @@ export default function Hero() {
           {/* main herosection */}
           <div className="flex h-2/3 justify-center relative flex-col  pt-6 pb-32 px-4  rounded-b-3xl gap-6">
             <div className="flex flex-col gap-2 text-center">
-              <h2 className="text-[clamp(1px,10vw,28px)] font-semibold leading-[1.2] tracking-tight sm:text-[64px] ">
+              <h2 className="text-[clamp(1px,10vw,28px)] font-normal leading-[1.2] tracking-normal sm:text-[64px] ">
                 Get
-                <span className="text-primary"> Rewarded</span>
+                <span className="text-primary font-semibold"> Rewarded</span>
                 <br />
-                for <span className="text-secondary">Supporting</span> Your
-                Favourite
-                <span className="text-primary"> Artists</span>
+                for{" "}
+                <span className="text-secondary font-semibold">
+                  Supporting
+                </span>{" "}
+                Your Favourite
+                <span className="text-primary font-semibold"> Artists</span>
               </h2>
               <p className="font-medium text-small  text-default sm:w-[466px] sm:text-[18px]">
                 Play a part in your favourite musician&apos;s success, and be
