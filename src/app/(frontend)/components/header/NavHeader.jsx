@@ -62,7 +62,7 @@ export default function NavHeader({ position }) {
       <NavbarContent justify="end">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
+          className="lg:hidden"
         />
       </NavbarContent>
       <NavbarMenu className="">
