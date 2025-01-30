@@ -1,0 +1,92 @@
+@import url("https://use.typekit.net/waj0nge.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #171c1a;
+  --foreground: #fbfbfb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #171c1a;
+    --foreground: #fbfbfb;
+  }
+}
+
+body {
+  color: var(--foreground);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .font-thin {
+    font-variation-settings:
+      "wdth" 100,
+      "wght" 100;
+  }
+  .font-extralight {
+    font-variation-settings:
+      "wdth" 100,
+      "wght" 200;
+  }
+  .font-light {
+    font-variation-settings:
+      "wdth" 100,
+      "wght" 300;
+  }
+  .font-normal {
+    font-variation-settings:
+      "wdth" 100,
+      "wght" 400;
+  }
+  .font-medium {
+    font-variation-settings:
+      "wdth" 100,
+      "wght" 500;
+  }
+  .font-semibold {
+    font-variation-settings:
+      "wdth" 100,
+      "wght" 600;
+  }
+  .font-bold {
+    font-variation-settings:
+      "wdth" 100,
+      "wght" 700;
+  }
+  .font-extrabold {
+    font-variation-settings:
+      "wdth" 100,
+      "wght" 800;
+  }
+  .font-black {
+    font-variation-settings:
+      "wdth" 150,
+      "wght" 900;
+  }
+}
+
+/* select all text elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li,
+td,
+th {
+  font-variation-settings: "wdth" 95;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+  transform: scale(0.8) !important;
+}
