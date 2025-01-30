@@ -5,7 +5,6 @@ import path from "path";
 import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
-import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
@@ -15,20 +14,6 @@ import { s3Storage } from "@payloadcms/storage-s3";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-
-const email = {
-  fromName: "Admin",
-  fromAddress: "admin@example.com",
-  transportOptions: {
-    host: process.env.SMTP_HOST,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-    port: 587,
-    secure: false,
-  },
-};
 
 export default buildConfig({
   admin: {
@@ -49,7 +34,7 @@ export default buildConfig({
     },
   }),
   sharp,
-  email,
+
   plugins: [
     s3Storage({
       collections: {
